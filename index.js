@@ -50,6 +50,15 @@ client.connect((err) => {
         })
   })
 
+  app.post('/isAdmin', (req, res) => {
+    const email = req.body.email;
+    adminCollection.find({ email: email })
+        .toArray((err, doctors) => {
+            res.send(doctors.length > 0);
+        })
+  });
+  
+
   //load all blogs
   app.get("/blogs", (req, res) => {
     blogsCollection.find({}).toArray((err, blogs) => {
