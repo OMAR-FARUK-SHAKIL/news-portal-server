@@ -29,6 +29,8 @@ client.connect((err) => {
     .db(`${process.env.DB_NAME}`)
     .collection("Domestic");
 
+    const adminCollection = client.db("newsPortal").collection("admin");
+
   //add blog in website
   app.post("/addBlog", (req, res) => {
     const blogs = req.body;
@@ -36,6 +38,17 @@ client.connect((err) => {
       res.send(result.insertedCount > 0);
     });
   });
+
+  app.post('/addAdmin', (req, res) => {
+    console.log('bod=',req.body);
+    const name = req.body.name;
+    const email = req.body.email;
+   
+    adminCollection.insertOne({ name, email})
+        .then(result => {
+            res.send(result.insertedCount > 0);
+        })
+  })
 
   //load all blogs
   app.get("/blogs", (req, res) => {
