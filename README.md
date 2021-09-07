@@ -4,7 +4,7 @@
 
 :mailbox: Let us know about the project!
 
-# Rectro Blog
+# Info News Portal
 
 It is a Blog site the more informantion given belowe. 
 
@@ -18,7 +18,7 @@ It is a Blog site the more informantion given belowe.
 ## Back-End Technology: 
 **nodeJs, ExpressJS, MongoDB, .env**
 
-Here live site: [Rectro-Blog](https://rectro-blog.netlify.app/)
+Here live site: [Info-News]
 
-You can visit the client code: [Rectro-Blog-client](https://github.com/ShahriarShubho/blog-projects)
+You can visit the client code: [Info-News-portal-client](https://github.com/OMAR-FARUK-SHAKIL/Info-news-portal-client)
 
