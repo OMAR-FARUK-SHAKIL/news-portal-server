@@ -29,7 +29,8 @@ client.connect((err) => {
     .db(`${process.env.DB_NAME}`)
     .collection("Domestic");
 
-    const adminCollection = client.db("newsPortal").collection("admin");
+    // const adminCollection = client.db("newsPortal").collection("admin");
+    const adminCollection = client.db("vaccineAtHome").collection("admin");
 
   //add blog in website
   app.post("/addBlog", (req, res) => {
@@ -58,12 +59,12 @@ client.connect((err) => {
         })
   });
 
-  app.get('/isAdmin', (req, res) => {
-    adminCollection.find({ email: email })
-    .toArray((err, doctors) => {
-        res.send(doctors.length > 0);
-    })
-  });
+  // app.get('/isAdmin', (req, res) => {
+  //   adminCollection.find({ email: email })
+  //   .toArray((err, doctors) => {
+  //       res.send(doctors.length > 0);
+  //   })
+  // });
   
 
   //load all blogs
