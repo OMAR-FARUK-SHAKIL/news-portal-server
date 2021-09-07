@@ -57,6 +57,13 @@ client.connect((err) => {
             res.send(doctors.length > 0);
         })
   });
+
+  app.get('/isAdmin', (req, res) => {
+    adminCollection.find({ email: email })
+    .toArray((err, doctors) => {
+        res.send(doctors.length > 0);
+    })
+  });
   
 
   //load all blogs
